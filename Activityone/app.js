@@ -1,4 +1,6 @@
 // 
 const getMessage =() => {
-    alert("Hello World")
+    //alert("Hello World")
+    prompt("What is your name")
 }
+
