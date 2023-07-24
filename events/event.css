@@ -1,0 +1,42 @@
+body{
+    background-color: white;
+    color:black
+}
+
+.mydark{
+    background-color: black;
+    color:white
+}
+#mainContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tile{
+    height:300px;
+    color:white;
+    width: 300px;
+    border:2px solid black;
+    border-radius: 10%;
+    margin: 3%;
+    background-size: cover;
+    padding-left:2%;
+    padding-top:12%;
+}
+
+.tile:hover{
+    transform: scale(1.1);
+}
+
+button{
+    color:black;
+    width:70%;
+}
+
+h2{
+    font-weight: bold;
+}
+
+#ava{
+    background-color: white;
+    color:black
+}

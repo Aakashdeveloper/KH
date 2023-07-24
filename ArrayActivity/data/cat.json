@@ -1,0 +1,12 @@
+[
+    {
+        "id":1,
+        "cat_id":1,
+        "name":"Face Wash"
+    },
+    {
+        "id":2,
+        "cat_id":2,
+        "name":"Shampoo"
+    }
+]

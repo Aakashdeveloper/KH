@@ -1,0 +1,49 @@
+{
+    "hotels":[
+                {
+                    "id":1,
+                    "hotel_name":"Taj Hotel Mumbai",
+                    "city":"Mumbai",
+                    "rating":[8.9,7.1],
+                    "cost":"Rs.15000/perRoom/night",
+                    "review":[
+                        {
+                            "id":1,
+                            "text":"test1"
+                        },
+                        {
+                            "id":2,
+                            "text":"test2"
+                        },
+                        {
+                            "id":3,
+                            "text":"test3"
+                        }
+                    ]
+                },
+                {
+                    "id":2,
+                    "hotel_name":"Crown Plaza",
+                    "city":"Gurugram",
+                    "rating":8.1,
+                    "cost":"Rs.6000/perRoom/night"
+                }
+            ],
+                {
+                    "id":3,
+                    "hotel_name":"Ramada Hotel",
+                    "city":"Pune",
+                    "rating":8.5,
+                    "cost":"Rs.8500/perRoom/night"
+                }
+            ],
+    "flight":[
+        {
+            "id":1,
+            "flight_route":"DEL => AMS",
+            "city":"Delhi",
+            "price":18000,
+            "airline":"Air India"
+        }
+    ]
+}

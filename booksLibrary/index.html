@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Book library</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="index.css"/>
+       
+    </head>
+    <body>
+        <div class="container">
+            <h1>Book Library</h1>
+            <hr/>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Add a Book
+                </div>
+                <div class="panel-body">
+                    <input id="bookTitle" type="text" placeholder="Title" required/>
+                    <input id="bookAuthor" type="text" placeholder="Author" required/>
+                    <input id="bookRating" type="number" placeholder="Rating" max="1" min="10" required/>
+                    <button id="addButton">Add</button>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Library Books
+                </div>
+                <div class="panel-body">
+                    <h2>Book List</h2>
+                    <input type="text" placeholder="Search Books By Title"
+                    oninput="filterBooks()" id="search"/>
+                    <h2></h2>
+                    <hr/>
+                    <section id="bookList">
+                       
+                        
+                    </section>
+                    
+                </div>
+            </div>
+        </div>
+       
+        <script src="index.js"></script>
+        <script>
+            window.onload=display()
+        </script>
+    </body>
+</html>
