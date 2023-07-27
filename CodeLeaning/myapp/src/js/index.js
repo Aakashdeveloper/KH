@@ -1,38 +1,128 @@
-class Courier{
-  constructor(weight,destination,source,bookedBy){
-    this.weight = weight;
-    this.destination = destination;
-    this.source = source;
-    this.bookedBy = bookedBy
+ // const xhr = new XMLHttpRequest()
+  // xhr.open('GET','https://jsonplaceholder.typicode.com/users')
+  // xhr.send()
+  // xhr.onload = function() {
+  //   if(xhr.status == 200){
+  //     console.log(`response ${xhr.responseText}`)
+  //   }else{
+  //     console.log(`Request failid with status code: ${xhr.responseText}`)
+  //   }
+  // }
+
+
+  // fetch(url,{method:'GET'})
+  // .then((res) =>  res.json())
+  // .then((data) => {
+  //   console.log(data)
+  // })
+
+  // async function getUser() {
+  //   let response = await fetch(url,{method:'GET'})
+  //   let data = await response.json()
+  //   console.log(data)
+  // }
+
+// $.ajax({
+//   url:url,
+//   type:'GET',
+//   dataType:'json',
+//   success:function(data){
+//     console.log(data)
+//   }
+// })
+
+// const url = 'https://jsonplaceholder.typicode.com/users'
+
+// const getUser =  async() =>{
+//   let response = await fetch(url,{method:'GET'})
+//   let data = await response.json()
+//   console.log(data)
+// }
+  
+// getUser()
+
+function fetchBooks() {
+
+    let content = ``
+    let bookTitle = document.getElementById('bookTitle').value;
+    let queryParam = bookTitle.trim().length > 0 ? bookTitle :'StarWar'
+    if(bookTitle.trim().length == 0){
+        document.getElementById('error').innerText = "Please Enter Search String"
+    }
+    if(bookTitle.trim().length > 0){
+      document.getElementById('error').innerText = "" 
+    }
+    //Step2 > Call api on the basis of user input
+    console.log(`${url}?q=${queryParam}`)
+    fetch(`${url}?q=${queryParam}`,{method:'GET'})
+    .then((res) => res.json())
+    .then((data) => {
+        //console.log(data)
+        let displayData = data.items.map((item) => {
+            console.log(item.volumeInfo.imageLinks.smallThumbnail)
+            //Step3 > Bind data in the ui
+            return(
+                 `<div class="card">
+                      <div class="imgdiv">
+                          <img src="${item.volumeInfo.imageLinks.thumbnail}" alt="text"/>
+                      </div>
+                      <div class="contentdiv">
+                          <h2>${item.volumeInfo.title}</h2>
+                          <p>Author: ${item.volumeInfo.publisher}</p>
+                          <p>
+                              ${item.volumeInfo.description}
+                          </p>
+                      </div>
+                  </div>`
+            )
+        })
+        content += displayData
+  
+        document.getElementById('content').innerHTML = content;
+    })
+    .catch((err) => {
+        console.log
+    })
   }
 
-  bookCourier(){
-    this.price = this.weight > 20 ? 200 :100;
-    return `Courier Booked The Price is ${this.price}`
-  }
+const url = "https://www.googleapis.com/books/v1/volumes"
+//Step1 > Read user input
+let searchButton = document.getElementById('searchButton');
+searchButton.addEventListener('click',fetchBooks);
 
-  showCourier(){
-    return `This courier is headed to ${this.destination}. It was booked by ${this.bookedBy} at ${this.source} and weighs a total of ${this.weight}`
+const fetchBooks =  async() => {
+
+  let content = ``
+  let bookTitle = document.getElementById('bookTitle').value;
+  let queryParam = bookTitle.trim().length > 0 ? bookTitle :'StarWar'
+  if(bookTitle.trim().length == 0){
+      document.getElementById('error').innerText = "Please Enter Search String"
   }
+  if(bookTitle.trim().length > 0){
+    document.getElementById('error').innerText = "" 
+  }
+  //Step2 > Call api on the basis of user input
+
+  let response = await fetch(`${url}?q=${queryParam}`,{method:'GET'})
+  let data = await response.json()
+  let displayData = data.items.map((item) => {
+        //Step3 > Bind data in the ui
+        return(
+            `<div class="card">
+                <div class="imgdiv">
+                    <img src="${item.volumeInfo.imageLinks.thumbnail}" alt="text"/>
+                </div>
+                <div class="contentdiv">
+                    <h2>${item.volumeInfo.title}</h2>
+                    <p>Author: ${item.volumeInfo.publisher}</p>
+                    <p>
+                        ${item.volumeInfo.description}
+                    </p>
+                </div>
+            </div>`
+        )
+    })
+    content += displayData
+
+    document.getElementById('content').innerHTML = content;
 }
-
-
-let choice = -1;
-do{
-  let myCourier = new Courier(28,"Delhi","Mumbai","Kunal")
-  console.log(" Choose on : \n1 Book Courier\n2. See Details \n3. Quit")
-  choice = parseInt(prompt("Enter your choice: "))
-  switch(choice){
-    case 1:
-      console.log(myCourier.bookCourier())
-      break;
-    case 2:
-      console.log(myCourier.showCourier())
-      break;
-    case 3:
-      console.log(`Thank you for using`)
-      break;
-    default:
-      console.log('Wrong Input')
-  }
-} while(choice > 0 && choice < 3);
