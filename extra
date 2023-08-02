@@ -1,0 +1,33 @@
+Design
+> WireFrame (How application will look after final development)
+https://www.figma.com/
+https://helpx.adobe.com/support/xd.html
+
+* Code Editor 
+> Place to write a Code
+
+
+* Lint
+function test(){
+    let a = 'code';
+    let json = [
+        "name":"test",
+        "code":10
+    ];
+    return json;
+}
+
+> webpack
+> gulp
+> grunt
+
+// dummy api
+json-server
+//Step1
+* One Time
+> open cmd as admin
+> npm i -g json-server
+
+* When ever need api
+> open terminal
+> json-server --watch data.json --port 4555

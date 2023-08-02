@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your JavaScript Playground</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <p>Restaurants App</p>
+      <a href="index.html">Home</a>
+      <a href="orders.html">Orders</a>
+    </header>
+    <hr/>
+    <div id="main">
+      <div class="heading pheading">
+        Place Order
+      </div>
+      <div>
+          <form action="http://localhost:7800/orders" method="POST">
+              <div>
+                  <label>Id</label>
+                  <input id="rid" readonly name="id"/>
+              </div>
+              <div>
+                <label>Restaurants</label>
+                <input id="restaurants" readonly name="restaurants"/>
+              </div>
+              <div>
+                <label>Restaurants Id</label>
+                <input id="restId" readonly name="restId"/>
+              </div>
+              <div>
+                  <label>Cost</label>
+                  <input id="cost" readonly name="cost"/>
+              </div>
+              <div>
+                  <label>Name</label>
+                  <input id="name"  name="name" required/>
+              </div>
+              <div>
+                  <label>Date</label>
+                  <input id="date" type="date"  name="date" required/>
+              </div>
+              <button type="submit">Place Order</button>
+          </form>
+      </div>
+    </div>
+    <script src="js/pOrder.js"></script>
+    <script>
+        window.onload= preFillForm()
+    </script>
+  </body>
+</html>

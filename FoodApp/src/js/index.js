@@ -48,4 +48,4 @@ const fetchData =  async(id) => {
 // function getData(params) {
 //     alert("hiii")
 // }
-// npx @knowledgehut/create-js-app my app
+// npx @knowledgehut/create-js-app myapp

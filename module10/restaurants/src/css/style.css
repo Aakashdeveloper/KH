@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header{
+  text-align: center;
+  font-size:40px
+}
+
+#main{
+  width:90%;
+  margin-left: 5%;
+  background-color: rgb(246, 244, 244);
+}
+
+.heading{
+  margin: auto;
+  width:144px;
+  height:38px;
+  font-size:30px;
+  border-bottom:4px solid gold;
+}
+
+.pheading{
+  width:166px;
+}
+
+#buttonDiv{
+  margin-left: 33%;
+  margin-top: 2%;
+}
+
+.menuButton{
+  border-radius: 5%;
+  border: 2px solid rgb(180, 172, 129);
+  font-size:20px;
+}
+
+#cardDiv{
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  height:200px;
+  width:40%;
+  margin-left: 6%;
+  margin-top: 2%;
+  display: flex;
+}
+
+.imgDiv{
+  width:40%;
+  height: 100%;
+  border:5px groove gold;
+}
+
+.imgDiv img{
+  height: 100%;
+  width: 100%;
+}
+
+.textDiv{
+  margin-left: 2%;
+  width: 55%;
+}
+
+#footText{
+  text-align: center;
+  font-size:30px
+}
+
+/* footer{
+  display: flex;
+}
+
+.footDiv{
+  width:30%;
+  height:80px;
+  border-right: 2px solid black;
+} */
+
+.btn{
+  text-decoration: none;
+  height: 20px;
+  width: 70px;
+  border:2px solid black;
+  color:gray;
+  border-radius: 5%;
+}
